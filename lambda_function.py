@@ -1,16 +1,18 @@
-import os
-from evidently.ui.workspace import Workspace
+
 
 def handler(event, context):
-    os.environ["AWS_PROFILE"] = "default"
+    import os
+    print("NO PROFILE!")
+   # os.environ["AWS_PROFILE"] = "default"
     
     
     
+    from evidently.ui.workspace import Workspace
     import pandas as pd
     from evidently import Report
-    from evidently.metrics import *
-    from evidently.presets import *
-    from evidently.tests import *
+    from evidently.presets import DataDriftPreset
+  #  from evidently.presets import *
+  #  from evidently.tests import *
     from evidently.ui.workspace import Workspace
     import fsspec
     
@@ -38,5 +40,4 @@ def handler(event, context):
             "statusCode": 200
             }
             
-    
-    
+
